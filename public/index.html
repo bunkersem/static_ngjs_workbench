@@ -1,0 +1,91 @@
+<!doctype html>
+<html data-ng-app="app1" ng-init="person = {fname: 'Sem'}" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-toggleable-md bg-primary navbar-inverse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Nav 1 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nav 2</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nav 3 dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto">
+                <input class="form-control" type="text" placeholder="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-5" style="background: #D0F4DE"></div>
+
+    <div class="container mt-5">
+
+        <div data-ng-controller="ctrl1">
+
+            <div class="form-group">
+                <label>Values:</label>
+                <input class="form-control" id="first" type="text" data-ng-model="first" />
+                <input class="form-control" id="second" type="text" data-ng-model="second" />
+            </div>
+            <button ng-click="updateValue()">Sum</button>
+            <br /><br /> {{calculation}}
+            <br /><br />
+            <p>Your second value is <span data-ng-bind="second"></span>
+                <br /><br />
+                <div data-ng-if="users.error === false">
+
+                </div>
+                <div data-ng-switch="users.err">
+                    <ul ng-switch-when="false" class="list-group" data-ng-repeat="user in users.result">
+                        <li class="list-group-item" data-ng-click="click(user)">
+                            {{user.username}}
+                        </li>
+                    </ul>
+                    <h5 data-ng-switch-default data-ng-bind="users.err" class="alert alert-danger">
+                        </h3>
+                </div>
+        </div>
+
+        <div class="mb-5" data-ng-controller="ctrl2">
+            {{feel1}}
+            <br />
+            {{feel2}}
+        </div>
+        
+
+
+    </div>
+    </div>
+
+
+
+
+    <script src="./assets/bower_components/angular/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="./assets/bower_components/bootstrap.native/dist/bootstrap-native-v4.min.js"></script>
+    <script src="./assets/app.js"></script>
+</body>
+
+</html>

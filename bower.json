@@ -1,0 +1,20 @@
+{
+  "name": "angularjs",
+  "authors": [
+    "Sem <polyismstudio@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap.native": "^2.0.12"
+  }
+}
